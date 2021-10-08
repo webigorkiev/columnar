@@ -33,7 +33,6 @@ ADD_LIBRARY ( accessor OBJECT
 		accessorstr.h
 		accessortraits.h
 		check.h
-		sse_neon_accessor.h
 		)
 
 target_link_libraries ( accessor PRIVATE columnar_root )

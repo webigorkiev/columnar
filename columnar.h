@@ -16,6 +16,10 @@
 
 #pragma once
 
+#if defined(__GNUC__) && defined(__ARM_NEON)
+    #include <sse_neon.h>
+#endif
+
 #include "util/util.h"
 #include <functional>
 

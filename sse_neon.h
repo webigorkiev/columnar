@@ -2,8 +2,8 @@
 // Created by Professional on 08.10.2021.
 //
 
-#ifndef COLUMNAR_SSE_NEON_ACCESSOR_H
-#define COLUMNAR_SSE_NEON_ACCESSOR_H
+#ifndef COLUMNAR_SSE_NEON_H
+#define COLUMNAR_SSE_NEON_H
     #define vreinterpretq_m128i_s32(x) vreinterpretq_s64_s32(x)
     #define vreinterpretq_m128i_s64(x) (x)
     #define vreinterpretq_s32_m128i(x) vreinterpretq_s32_s64(x)
@@ -47,4 +47,4 @@
         return vreinterpretq_m128i_s64(
         vaddq_s64(vreinterpretq_s64_m128i(a), vreinterpretq_s64_m128i(b)));
     }
-#endif //COLUMNAR_SSE_NEON_ACCESSOR_H
+#endif //COLUMNAR_SSE_NEON_H

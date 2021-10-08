@@ -21,7 +21,6 @@
     #include "intrin.h"
 #elif defined(__GNUC__) && defined(__ARM_NEON)
     #include <arm_neon.h>
-     #include "sse_neon_accessor.h"
 #else
     #include <x86intrin.h>
 #endif

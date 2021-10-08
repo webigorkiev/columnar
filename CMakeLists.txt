@@ -119,7 +119,7 @@ if (TARGET FastPFOR::FastPFOR)
 	add_subdirectory ( accessor )
 
 	# main library
-	add_library ( columnar MODULE columnar.cpp builder.cpp columnar.h builder.h )
+	add_library ( columnar MODULE columnar.cpp builder.cpp columnar.h builder.h sse_neon.h)
 	target_compile_options ( columnar PRIVATE $<$<COMPILE_LANG_AND_ID:CXX,MSVC>:-wd4996> )
 	target_link_libraries ( columnar PRIVATE columnar_root util builder accessor )
 	set_target_properties( columnar PROPERTIES PREFIX "" OUTPUT_NAME lib_manticore_columnar )
