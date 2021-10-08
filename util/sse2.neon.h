@@ -5,6 +5,7 @@
 #ifndef COLUMNAR_SSE2_NEON_H
 #define COLUMNAR_SSE2_NEON_H
     #define vreinterpretq_m128i_s32(x) vreinterpretq_s64_s32(x)
+    #define vreinterpretq_m128i_s64(x) (x)
     #define vreinterpretq_s32_m128i(x) vreinterpretq_s32_s64(x)
     #define vreinterpretq_s64_m128i(x) (x)
 
