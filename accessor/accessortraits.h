@@ -23,28 +23,13 @@
 #include "delta.h"
 #include <cassert>
 
-#if defined(_MSC_VER)
-/* Microsoft C/C++-compatible compiler */
-#include <intrin.h>
-#include <iso646.h>
-#include <stdint.h>
-#define __restrict__ __restrict
-#elif defined(__GNUC__) && (defined(__x86_64__) || defined(__i386__))
-/* GCC-compatible compiler, targeting x86/x86-64 */
-     #include <x86intrin.h>
+#if _WIN32
+    #include "intrin.h"
 #elif defined(__GNUC__) && defined(__ARM_NEON)
-     /* GCC-compatible compiler, targeting ARM with NEON */
      #include <arm_neon.h>
-     #include "sse2.neon.h"
-#elif defined(__GNUC__) && defined(__IWMMXT__)
-     /* GCC-compatible compiler, targeting ARM with WMMX */
-     #include <mmintrin.h>
-#elif (defined(__GNUC__) || defined(__xlC__)) && (defined(__VEC__) || defined(__ALTIVEC__))
-     /* XLC or GCC-compatible compiler, targeting PowerPC with VMX/VSX */
-     #include <altivec.h>
-#elif defined(__GNUC__) && defined(__SPE__)
-     /* GCC-compatible compiler, targeting PowerPC with SPE */
-     #include <spe.h>
+     #include "sse_neon.h"
+#else
+#include <x86intrin.h>
 #endif
 
 namespace columnar

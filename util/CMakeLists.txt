@@ -28,7 +28,7 @@ ADD_LIBRARY ( util OBJECT
 		delta.h
 		reader.h
 		codec.h
-        sse2.neon.h)
+		sse_neon_utils.h)
 
 include ( CheckFunctionExists )
 check_function_exists ( pread HAVE_PREAD )
