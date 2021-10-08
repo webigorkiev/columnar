@@ -4,8 +4,11 @@
 
 #ifndef COLUMNAR_SSE2_NEON_H
 #define COLUMNAR_SSE2_NEON_H
-    typedef int64x2_t __m128i; /* 128-bit vector containing integers */
+    #define vreinterpretq_m128i_s32(x) vreinterpretq_s64_s32(x)
+    #define vreinterpretq_s32_m128i(x) vreinterpretq_s32_s64(x)
+    #define vreinterpretq_s64_m128i(x) (x)
 
+    typedef int64x2_t __m128i; /* 128-bit vector containing integers */
     // Loads 128-bit value. :
     // https://msdn.microsoft.com/zh-cn/library/f4k12ae8(v=vs.90).aspx
     FORCE_INLINE __m128i _mm_loadu_si128(const __m128i *p)
